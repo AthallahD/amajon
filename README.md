@@ -135,21 +135,22 @@ git push pws master
 ```
 ## Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html.
 ```mermaid
-flowchart TD
-  subgraph Webserver Environment
-  Django -- extracted arguments from requests ---> views.py
-  views.py --> index.html
-  views.py <--> models.py:::database
-  models.py:::database --> DB[(Database)]:::database
-  index.html -- Merged of HTML template and value from process ---> Django
+flowchart LR
+  subgraph "Webserver Environment"
+    Internet -- Request --> Django
+    Django -- Extracted arguments --> views.py
+    views.py -- Processed data --> index.html
+    views.py <--> models.py:::database
+    models.py:::database -- Queries --> DB[(Database)]:::database
+    index.html -- HTML template merged with data --> Django
+    Django -- Web Page --> Internet
   end
 
-  Django --Web Page---> Internet
-  Internet --Request---> Django
-  Internet --Web Page---> Laptop
-  Laptop --Request--->Internet
-  
-  classDef database fill:#f96,color:#000
+  Laptop -- Request --> Internet
+  Internet -- Web Page --> Laptop
+
+  classDef database fill:#f96,stroke:#000,stroke-width:2px;
+
 ```
 
 _User_ mengirim _request_ melalui Internet, yang diterima oleh Django. Django memprosesnya di `views.py` dan, jika diperlukan, mengambil data dari `models.py` yang terhubung ke database. Lalu, data teresebut _merge_ dengan template HTML. Hasilnya, halaman web yang sudah terisi data dikirim kembali melalui Internet untuk ditampilkan di browser _user_.
