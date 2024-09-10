@@ -1,5 +1,5 @@
 # Amajon
-Link: 
+Link: http://athallah-damar-amajon.pbp.cs.ui.ac.id/
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 ### Membuat sebuah proyek Django baru
@@ -91,7 +91,8 @@ dan pada HTML menggunakan '{{}}'
     <h5>Name: </h5>
     <p>{{nama}}</p>
     <h5>Class: </h5>
-    <p>{{kelas}}</p> 
+    <p>{{kelas}}</p>
+
 </html>
 ```
 ### Membuat sebuah routing pada `urls.py` aplikasi main untuk memetakan fungsi yang telah dibuat pada `views.py`.
