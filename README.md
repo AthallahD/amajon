@@ -1,9 +1,11 @@
 # Amajon
 
 ## Link tautan PWS dan masing-masing README.md tugas
-Link: http://athallah-damar-amajon.pbp.cs.ui.ac.id/
-[README.md Tugas 2](#Tugas-2)
-[README.md Tugas 3](#Tugas-3)
+- Link: http://athallah-damar-amajon.pbp.cs.ui.ac.id/
+
+- [README.md Tugas 2](#Tugas-2)
+
+- [README.md Tugas 3](#Tugas-3)
 
 ## Tugas-2
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
