@@ -1,15 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amajon.com</title>
-    <h1>{{application_name}}</h1>
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ application_name }}</h1>
 
-    <h5>NPM: </h5>
-    <p>{{ npm }}</p>
-    <h5>Name: </h5>
-    <p>{{ nama }}</p>
-    <h5>Class: </h5>
-    <p>{{ kelas }}</p>
-    
-</html>
+<h2>Amajon is one of the largest e-commerce in Indonesia</h2>
+<h5>NPM: </h5>
+<p>{{ npm }}<p>
+
+<h5>Name:</h5>
+<p>{{ nama }}</p>
+
+<h5>Class:</h5>
+<p>{{ kelas }}</p>
+
+{% if not products %}
+    <p>Belum ada data product pada toko amajon.</p>
+{% else %}
+    <table>
+    <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Quantity</th>
+    </tr>
+
+    {% for products_entry in products %}
+        <tr>
+            <td>{{products_entry.name}}</td>
+            <td>{{products_entry.price}}</td>
+            <td>{{products_entry.description}}</td>
+            <td>{{products_entry.quantity}}</td>
+        </tr>
+{% endfor %}
+</table>
+{% endif %}
+
+<br />
+
+<a href="{% url 'main:create_product_entry' %}">
+  <button>Add New Product Entry</button>
+</a>
+{% endblock content %}
