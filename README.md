@@ -9,6 +9,8 @@
 
 - [README.md Tugas 4](#Tugas-4)
 
+- [README.md Tugas 5](#Tugas-5)
+
 # Tugas-2
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
@@ -726,3 +728,186 @@ urlpatterns = [
     path('logout/', logout_user, name='logout')
 ]
 ```
+# Tugas-5
+## Jika terdapat beberapa CSS selector untuk suatu elemen HTML, jelaskan urutan prioritas pengambilan CSS selector tersebut!
+1. Inline Style
+```HTML
+<div style="color: red;">Contoh Inline Style</div>
+```
+2. ID Selector
+```HTML
+<body>
+  <div id="header">
+    <h1>ID Header</h1>
+  </div>
+  ...
+</body>
+```
+```css
+#header {
+  background-color: #a3b90e;
+  margin-top: 0;
+  padding: 20px 20px 20px 40px;
+}
+```
+3. Class, Pseudo-class, dan attribute selector
+```css
+.content_section {
+  background-color: #112a33;
+  margin-bottom: 30px;
+  color: #0F0F0F;
+  font-family: cursive;
+  padding: 20px 20px 20px 40px;
+}
+```
+4. Type Selector
+```css
+p {
+  color: black;
+}
+```
+5. Universal Selector
+```css
+* {
+  margin: 0;
+  padding: 0;
+}
+```
+## Mengapa responsive design menjadi konsep yang penting dalam pengembangan aplikasi web? Berikan contoh aplikasi yang sudah dan belum menerapkan responsive design!
+Responsive design adalah konsep dalam pengembangan web yang memungkinkan tampilan sebuah aplikasi atau situs web untuk beradaptasi dengan berbagai ukuran layar dan perangkat. Ini termasuk layar smartphone, tablet, laptop, dan desktop. Seiring dengan berkembangnya penggunaan perangkat mobile, pentingnya responsive design menjadi semakin menonjol.
+
+Berikut adalah beberapa alasan mengapa responsive design sangat penting:
+
+1. **Meningkatkan Pengalaman Pengguna (User Experience)**
+Pengguna saat ini mengakses web melalui berbagai perangkat, dari smartphone hingga desktop dengan berbagai ukuran layar. Responsive design memastikan bahwa pengalaman pengguna tetap optimal di semua perangkat, memberikan kenyamanan dalam hal navigasi, kecepatan, dan aksesibilitas. Misalnya, pada layar kecil, elemen-elemen yang besar seperti tombol dan teks yang mudah dibaca sangat penting untuk mencegah pengguna harus memperbesar layar (zoom in/out) secara manual.
+
+2. **Optimasi SEO (Search Engine Optimization)**
+Google dan mesin pencari lainnya memprioritaskan situs web yang mobile-friendly dan responsive dalam hasil pencarian mereka. Pada 2015, Google memperkenalkan algoritma mobile-first indexing, yang berarti bahwa versi mobile dari sebuah situs web digunakan sebagai basis untuk menentukan peringkat SEO. Jika situs tidak responsive, ada kemungkinan besar ia akan mendapat peringkat yang lebih rendah di hasil pencarian.
+
+3. **Mengurangi Biaya dan Waktu Pengembangan**
+Dengan responsive design, pengembang web hanya perlu membuat satu versi situs web yang bisa berfungsi di berbagai perangkat. Ini berbeda dengan pendekatan lama, di mana diperlukan pengembangan terpisah untuk versi desktop dan versi mobile. Selain itu, perawatan dan update juga lebih mudah karena semua perubahan diterapkan hanya di satu tempat.
+
+4. **Menjangkau Lebih Banyak Pengguna**
+Jumlah pengguna perangkat mobile semakin meningkat. Pada 2023, lebih dari 60% akses internet global berasal dari perangkat mobile. Dengan situs web atau aplikasi yang responsive, perusahaan atau pengembang dapat menjangkau lebih banyak pengguna, baik yang mengakses melalui desktop maupun mobile.
+
+5. **Meningkatkan Konversi dan Engagement**
+Situs web yang tidak responsive sering kali membuat pengguna frustasi karena tampilan yang tidak rapi, elemen yang tidak dapat diakses dengan baik, atau kecepatan loading yang lambat. Akibatnya, pengguna cenderung meninggalkan situs tersebut. Sebaliknya, dengan desain yang responsive, pengguna lebih cenderung tetap berada di situs lebih lama, yang dapat meningkatkan peluang konversi atau engagement (seperti penjualan atau langganan).
+
+### Contoh Aplikasi yang telah dan belum menerapkan Responsive Design
+#### Yang Sudah
+1. Airbnb
+2. Spotify
+3. Netflix
+#### Yang Belum
+1. Craiglist
+2. Web Pemerintah Jogja (jogjakota.id)
+
+## Jelaskan perbedaan antara margin, border, dan padding, serta cara untuk mengimplementasikan ketiga hal tersebut!
+Margin, border, dan padding adalah tiga konsep penting dalam CSS Box Model yang digunakan untuk mengatur tata letak dan ruang di sekitar elemen HTML pada sebuah halaman web. Setiap elemen di halaman web memiliki kotak yang terdiri dari empat bagian: konten, padding, border, dan margin.
+![Box Model CSS](readme_images/box-model.png)
+
+```css
+div {
+  margin: 20px; /* Jarak elemen ini dengan elemen lain */
+  border: 2px solid black; /* Border hitam solid di sekitar elemen */
+  padding: 15px; /* Jarak antara konten dan border */
+}
+```
+## Jelaskan konsep flex box dan grid layout beserta kegunaannya!
+Flexbox dan Grid Layout adalah dua sistem tata letak (layout) dalam CSS yang digunakan untuk merancang halaman web yang responsif, dinamis, dan fleksibel. Keduanya memungkinkan pengembang web untuk mengatur elemen di dalam container dengan lebih mudah dan lebih rapi dibandingkan dengan metode lama, seperti float atau positioning.
+### Flexbox
+**Kegunaan Flexbox:**
+- Susunan horizontal atau vertikal yang fleksibel: Cocok untuk menyusun navigasi, toolbar, atau form yang membutuhkan elemen yang fleksibel.
+- Responsif dan dinamis: Flexbox membuat tata letak yang mudah menyesuaikan ukuran jendela atau layar perangkat.
+- Sederhana dan cepat: Ideal untuk tata letak sederhana dengan satu dimensi (baris atau kolom).
+### Grid Layout
+**Kegunaan Grid Layout:**
+- Tata letak dua dimensi: Ideal untuk tata letak halaman yang kompleks yang melibatkan beberapa baris dan kolom, seperti dashboard, halaman majalah, galeri gambar, dan lain-lain.
+- Pengendalian lebih detail: Grid memberikan kontrol penuh terhadap posisi dan ukuran grid items, memungkinkan desain yang lebih kompleks dan terstruktur.
+- Responsif dengan fraksi: Grid menggunakan fraksi (fr) untuk mengukur kolom atau baris berdasarkan bagian dari ruang yang tersedia, sehingga lebih fleksibel dan responsif.
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+1. Menambahkan dan routing logic `edit_product` pada `views.py` dan `urls.py` di folder `main`
+```py
+def edit_product(request, id):
+    product = Product.objects.get(pk = id)
+    form = ProductForm(request.POST or None, instance = product)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    
+    context = {'form' : form}
+    return render(request, "edit_product.html", context)
+```
+```py
+path('edit-product/<uuid:id>', edit_product, name='edit_product')
+```
+2. Menambahkan dan routing logic `delete_product` pada `views.py` dan `urls.py` di folder `main`
+```py
+def delete_product(request, id):
+    product = Product.objects.get(pk = id)
+    product.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
+```
+```py
+path('delete-product/<uuid:id>', delete_product, name='delete_product')
+```
+3. Menambahkan link Tailwind basa `base.html`
+```HTML
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block meta %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% endblock meta %}
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"/>
+  </head>
+  <body>
+    {% block content %} {% endblock content %}
+  </body>
+</html>
+```
+4. Menambahkan MiddleWare dan Static pada `settings.py`
+```py
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    ...
+]
+```
+```py
+STATIC_URL = '/static/'
+if DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'static'
+    ]
+else:
+    STATIC_ROOT = BASE_DIR / 'static'
+```
+5. Membuat folder `static` pada root folder project dan menambahkan 2 folder yaitu `css` dan `images` serta menambahkan `global.css` dan isi file tsb
+```css
+.form-style form input, form textarea, form select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #bcbcbc;
+    border-radius: 0.375rem;
+}
+.form-style form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #674ea7;
+    box-shadow: 0 0 0 3px #674ea7;
+}
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.animate-shine {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.3));
+    background-size: 200% 100%;
+    animation: shine 3s infinite;
+}
+```
+Dengan mengsetup hal-hal diatas, step selanjutnya yaitu menambahkan styling pada halaman login, register, dan main. Pada halaman main, Lalu menambahkan juga card (`card_info.html` dan `card_product.html`) agar halaman lebih menarik. Dan pada langkah terakhir, saya menambahkan navbar dengan responsive design dan mengincludenya pada `main.html`, `create_product.html`, dan `edit_product.html`.

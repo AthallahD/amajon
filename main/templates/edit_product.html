@@ -1,41 +1,78 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block meta %}
-<title>Edit Mood</title>
+<title>Edit Product</title>
 {% endblock meta %}
 
 {% block content %}
 {% include 'navbar.html' %}
-<div class="flex flex-col min-h-screen bg-gray-100">
-  <div class="container mx-auto px-4 py-8 mt-16 max-w-xl">
-    <h1 class="text-3xl font-bold text-center mb-8 text-black">Edit Your Product</h1>
-  
-    <div class="bg-white rounded-lg p-6 form-style">
+
+<div class="flex flex-col min-h-screen bg-gradient-to-br from-gray-100 to-gray-200">
+  <div class="container mx-auto px-4 py-12 mt-16 max-w-2xl">
+    <!-- Form Header -->
+    <div class="bg-indigo-600 rounded-t-lg p-4 shadow-lg text-white">
+      <h1 class="text-3xl font-extrabold text-center">Update Your Product</h1>
+    </div>
+
+    <!-- Form Body -->
+    <div class="bg-white shadow-lg rounded-b-lg p-6">
       <form method="POST" class="space-y-6">
-          {% csrf_token %}
-          {% for field in form %}
-              <div class="flex flex-col">
-                  <label for="{{ field.id_for_label }}" class="mb-2 font-semibold text-gray-700">
-                      {{ field.label }}
-                  </label>
-                  <div class="w-full">
-                      {{ field }}
-                  </div>
-                  {% if field.help_text %}
-                      <p class="mt-1 text-sm text-gray-500">{{ field.help_text }}</p>
-                  {% endif %}
-                  {% for error in field.errors %}
-                      <p class="mt-1 text-sm text-red-600">{{ error }}</p>
-                  {% endfor %}
-              </div>
-          {% endfor %}
-          <div class="flex justify-center mt-6">
-              <button type="submit" class="bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 ease-in-out w-full">
-                  Edit Your Product
-              </button>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="flex flex-col space-y-2">
+          <!-- Field Label -->
+          <label for="{{ field.id_for_label }}" class="text-lg font-semibold text-indigo-700">
+            {{ field.label }}
+          </label>
+
+          <!-- Input Field -->
+          <div class="relative">
+            {{ field }}
+            <style>
+              input, textarea, select {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #d1d5db; /* gray-300 */
+                border-radius: 8px;
+                transition: all 0.3s ease;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+              }
+              input:focus, textarea:focus, select:focus {
+                outline: none;
+                border-color: #4f46e5; /* indigo-500 */
+                box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.5); /* indigo focus ring */
+              }
+            </style>
+            {% if field.errors %}
+            <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+              <svg class="h-5 w-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            {% endif %}
           </div>
+
+          <!-- Error Message -->
+          {% if field.errors %}
+          {% for error in field.errors %}
+          <p class="text-red-600 text-sm">{{ error }}</p>
+          {% endfor %}
+          {% endif %}
+        </div>
+        {% endfor %}
+
+        <!-- Form Submission Button -->
+        <div class="flex justify-center">
+          <button type="submit"
+            class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+            Save Changes
+          </button>
+        </div>
       </form>
-  </div>
+    </div>
   </div>
 </div>
-{% endblock %}
+
+{% endblock content %}
