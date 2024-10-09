@@ -11,6 +11,8 @@
 
 - [README.md Tugas 5](#Tugas-5)
 
+- [README.md Tugas 6](#Tugas-6)
+
 # Tugas-2
 ## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
@@ -911,3 +913,440 @@ else:
 }
 ```
 Dengan mengsetup hal-hal diatas, step selanjutnya yaitu menambahkan styling pada halaman login, register, dan main. Pada halaman main, Lalu menambahkan juga card (`card_info.html` dan `card_product.html`) agar halaman lebih menarik. Dan pada langkah terakhir, saya menambahkan navbar dengan responsive design dan mengincludenya pada `main.html`, `create_product.html`, dan `edit_product.html`.
+
+# Tugas-6
+## Jelaskan manfaat dari penggunaan JavaScript dalam pengembangan aplikasi web!
+Penggunaan JavaScript dalam pengembangan aplikasi web memberikan banyak manfaat, terutama karena JavaScript adalah bahasa pemrograman yang dapat berjalan di sisi klien (client-side). Berikut adalah penjelasan detail tentang beberapa manfaat utama JavaScript dalam pengembangan aplikasi web:
+
+1. Interaktivitas
+JavaScript memungkinkan pengembang untuk membuat aplikasi web yang interaktif. Pengguna bisa langsung berinteraksi dengan halaman web tanpa perlu memuat ulang seluruh halaman. Contoh penggunaan yang umum meliputi:
+
+- Validasi form secara langsung (real-time validation).
+- Menampilkan atau menyembunyikan elemen halaman web berdasarkan aksi pengguna.
+- Pembaruan konten halaman tanpa refresh (misalnya, menggunakan teknik seperti AJAX).
+
+2. Kecepatan dan Responsivitas
+Karena JavaScript berjalan langsung di browser pengguna (client-side), tindakan yang melibatkan JavaScript dapat dieksekusi dengan sangat cepat, tanpa perlu komunikasi dengan server. Ini membuat pengalaman pengguna menjadi lebih responsif, karena:
+
+- Proses dapat dieksekusi di perangkat pengguna.
+- Waktu pemuatan ulang halaman web dapat dikurangi.
+
+3. AJAX (Asynchronous JavaScript and XML)
+JavaScript sangat penting dalam implementasi AJAX, yang memungkinkan pengiriman data ke dan dari server tanpa memuat ulang halaman. AJAX memungkinkan aplikasi web untuk:
+
+- Mengambil data dari server di latar belakang.
+- Memperbarui konten halaman secara dinamis tanpa mengganggu pengalaman pengguna.
+- Membuat aplikasi single-page applications (SPA), di mana halaman tidak perlu dimuat ulang saat pengguna berinteraksi
+dengan berbagai elemen.
+
+4. Pengalaman Pengguna yang Lebih Baik (User Experience)
+Aplikasi web yang dibangun dengan JavaScript dapat memberikan pengalaman pengguna yang lebih baik. Misalnya:
+
+- Penggunaan animasi untuk membuat transisi yang halus.
+- Peringatan atau notifikasi yang muncul secara langsung ketika pengguna melakukan kesalahan.
+- Fitur autocomplete pada form input. Semua ini berkontribusi pada peningkatan usability dan pengalaman pengguna secara keseluruhan.
+
+5. Kompatibilitas Cross-Browser
+JavaScript dapat berjalan di hampir semua browser modern tanpa modifikasi signifikan. Ini memungkinkan pengembang untuk membuat aplikasi web yang dapat diakses oleh berbagai pengguna, terlepas dari perangkat atau platform yang mereka gunakan.
+
+6. Ekosistem dan Library yang Kuat
+JavaScript memiliki ekosistem yang sangat besar dan kaya, dengan banyak library dan framework yang memudahkan pengembangan aplikasi web. Beberapa framework populer adalah:
+- React.js: Untuk membangun user interface yang dinamis dan responsif.
+- Vue.js: Framework progresif untuk membangun UI yang modular.
+- Angular: Framework JavaScript yang lengkap untuk membangun aplikasi web.
+- Node.js: Memungkinkan JavaScript dijalankan di server (server-side), memperluas fungsionalitas JavaScript dari sisi klien ke backend.
+- Library seperti jQuery, D3.js, dan Moment.js juga memudahkan dalam memanipulasi DOM, mengelola animasi, dan bekerja dengan data dalam JavaScript.
+
+7. Pengembangan Front-End dan Back-End (Full-Stack Development)
+Dengan hadirnya Node.js, JavaScript tidak lagi terbatas pada front-end saja. Pengembang dapat menggunakan JavaScript di sisi server untuk menangani logika aplikasi, bekerja dengan database, dan melakukan pemrosesan data, yang memungkinkan penggunaan JavaScript dalam pengembangan full-stack.
+
+8. Skalabilitas dan Reusable Code
+JavaScript memungkinkan pengembang untuk membuat komponen yang dapat digunakan kembali (reusable components), terutama dengan framework seperti React dan Vue. Ini membantu dalam pengelolaan kode yang lebih baik dan pengembangan aplikasi yang lebih efisien.
+
+9. Kemudahan Integrasi
+JavaScript mudah diintegrasikan dengan bahasa dan teknologi lain, baik dalam lingkungan pengembangan front-end maupun back-end. Misalnya, JavaScript dapat berkolaborasi dengan:
+
+- HTML dan CSS untuk membentuk struktur dan tampilan halaman web.
+- REST API atau GraphQL untuk mengambil data dari server.
+- WebSocket untuk komunikasi real-time.
+
+10. Web Modern dan Progressive Web Apps (PWA)
+JavaScript memainkan peran penting dalam pengembangan Progressive Web Apps (PWA). Dengan PWA, aplikasi web dapat berfungsi seperti aplikasi native dengan kemampuan offline, push notifications, dan pengalaman pengguna yang lebih baik di perangkat mobile. Semua ini dimungkinkan berkat penggunaan JavaScript.
+
+11. Komunitas yang Besar
+JavaScript memiliki komunitas pengembang yang sangat besar dan aktif. Hal ini berarti ada banyak sumber daya seperti tutorial, dokumentasi, forum, dan bantuan yang tersedia, membuat pengembangan dengan JavaScript lebih mudah dan mendukung perkembangan yang cepat.
+
+12. Penggunaan pada Berbagai Platform
+Selain untuk pengembangan aplikasi web, JavaScript juga dapat digunakan untuk mengembangkan aplikasi mobile (misalnya dengan React Native), desktop (misalnya dengan Electron), dan bahkan aplikasi game (misalnya dengan Phaser.js). Ini menjadikan JavaScript sebagai bahasa yang sangat fleksibel.
+
+## Jelaskan fungsi dari penggunaan `await` ketika kita menggunakan `fetch()`! Apa yang akan terjadi jika kita tidak menggunakan `await`?
+Fungsi dari penggunaan `await` ketika kita menggunakan `fetch()` dalam JavaScript adalah untuk menunggu hasil dari operasi `fetch()` sebelum melanjutkan eksekusi kode berikutnya. `fetch()` sendiri merupakan fungsi yang mengembalikan Promise, yaitu janji bahwa operasi (seperti pengambilan data dari server) akan selesai di masa mendatang.
+
+### Apa yang terjadi jika kita tidak menggunakan `await`?
+Jika kita tidak menggunakan `await`, maka fungsi `fetch()` akan langsung mengembalikan sebuah Promise yang belum selesai. Artinya, program akan melanjutkan eksekusi tanpa menunggu `fetch()` selesai, yang bisa menyebabkan masalah jika kita ingin menggunakan hasil dari fetch.
+
+## Mengapa kita perlu menggunakan `decorator csrf_exempt` pada view yang akan digunakan untuk AJAX `POST`?
+Kita perlu menggunakan decorator `csrf_exempt` pada view yang digunakan untuk AJAX `POST` dalam beberapa kasus tertentu, terutama ketika kita tidak ingin atau tidak perlu melakukan validasi CSRF (Cross-Site Request Forgery) pada request tersebut. Berikut adalah penjelasan rinci tentang alasannya:
+
+1. Melewatkan Validasi `CSRF`
+Secara default, Django mengaktifkan perlindungan terhadap serangan `CSRF` dengan menggunakan token `CSRF` pada setiap request `POST` yang dikirimkan ke server. Setiap form HTML yang dikirim melalui metode POST harus menyertakan token CSRF untuk diverifikasi oleh Django, guna memastikan bahwa request tersebut berasal dari sumber yang sah.
+
+Namun, jika kita melakukan AJAX `POST` request, ada kalanya pengiriman token `CSRF` menjadi lebih sulit atau tidak diperlukan, terutama jika aplikasi tersebut:
+
+- Tidak memerlukan proteksi CSRF (misalnya, pada proyek-proyek yang bersifat pribadi atau tidak memiliki risiko serangan CSRF yang tinggi).
+- Menggunakan API publik di mana perlindungan CSRF tidak dibutuhkan.
+
+Dalam kasus seperti itu, kita bisa menggunakan `csrf_exempt` untuk menghindari validasi `CSRF` dan membuat permintaan AJAX berhasil tanpa mengharuskan token `CSRF`.
+
+2. Menghindari Kesalahan "CSRF Token Missing or Incorrect"
+Jika kita tidak menyertakan token `CSRF` saat melakukan AJAX `POST` request dan tidak menggunakan `csrf_exempt`, Django akan menolak request tersebut dengan mengeluarkan kesalahan "CSRF token missing or incorrect". Ini terjadi karena Django mengharapkan token `CSRF` untuk memverifikasi bahwa request berasal dari pengguna yang sah.
+
+Menggunakan `csrf_exempt` akan mencegah Django melakukan pengecekan ini, sehingga permintaan AJAX bisa diproses meskipun tidak ada token CSRF yang disertakan.
+
+3. Mempermudah Implementasi AJAX pada Proyek-Proyek Kecil
+Pada beberapa proyek kecil, terutama proyek yang tidak memerlukan keamanan tinggi, menggunakan `csrf_exempt` dapat mempercepat dan mempermudah implementasi AJAX `POST` tanpa harus memikirkan token `CSRF`. Ini sangat berguna jika Anda ingin membuat prototipe atau sedang mengembangkan fitur sederhana yang tidak terpapar pada risiko `CSRF`.
+
+4. Penggunaan API atau Endpoints yang Terbuka
+Jika sedang mengembangkan API atau endpoint yang akan diakses secara luas (misalnya oleh aplikasi eksternal, mobile apps, atau aplikasi pihak ketiga), `CSRF` mungkin tidak relevan, terutama jika endpoint tersebut diakses menggunakan token autentikasi lain (seperti API keys atau JWT). Dalam kasus ini, `csrf_exempt` bisa digunakan untuk menghindari konflik dengan validasi `CSRF`.
+
+- Risiko Penggunaan csrf_exempt
+Walaupun menggunakan `csrf_exempt` bisa memudahkan, ada risiko keamanan yang perlu diperhatikan. Dengan menonaktifkan validasi `CSRF`, Anda membuka celah bagi serangan `CSRF` di mana penyerang dapat mengeksploitasi sesi pengguna untuk mengirim request yang tidak diinginkan.
+
+Oleh karena itu, gunakan `csrf_exempt` hanya jika:
+
+- Yakin view tersebut tidak rentan terhadap serangan CSRF.
+- Aplikasi tersebut dilindungi oleh mekanisme keamanan lain (seperti autentikasi token atau OAuth).
+- API tersebut ditujukan untuk akses publik di mana CSRF tidak relevan.
+
+## Pada tutorial PBP minggu ini, pembersihan data input pengguna dilakukan di belakang (backend) juga. Mengapa hal tersebut tidak dilakukan di frontend saja?
+Pembersihan data input pengguna harus dilakukan di backend (server-side) selain di frontend (client-side) karena beberapa alasan penting yang terkait dengan keamanan, keandalan, dan integritas data. Berikut adalah alasan rinci :
+
+1. Keamanan
+Validasi di backend adalah lapisan pertahanan utama terhadap berbagai serangan, terutama serangan seperti injection (misalnya SQL injection) dan Cross-Site Scripting (XSS). Jika hanya mengandalkan validasi frontend, penyerang dapat memodifikasi kode JavaScript di browser atau menggunakan alat seperti Postman atau curl untuk mengirimkan data langsung ke server tanpa melalui frontend.
+
+- Manipulasi kode di browser: Pengguna atau penyerang bisa menonaktifkan atau memodifikasi validasi JavaScript di frontend, sehingga mereka bisa mengirim data yang tidak valid atau berbahaya ke server.
+- Serangan injection: Pembersihan di backend melindungi server dari input berbahaya yang dapat disalahgunakan untuk merusak sistem (misalnya, melalui SQL injection yang bisa menyebabkan pencurian atau penghancuran data).
+
+2. Integritas dan Konsistensi Data
+Frontend hanya bisa mengontrol apa yang dilakukan oleh pengguna pada antarmuka mereka. Namun, ada situasi di mana input data bisa terjadi tanpa keterlibatan antarmuka pengguna, seperti saat:
+
+- Data dikirim dari API eksternal.
+- Permintaan dikirim langsung dari tool seperti Postman atau curl yang melewati validasi frontend.
+
+Oleh karena itu, backend perlu memastikan bahwa data yang masuk selalu konsisten dan sesuai dengan aturan sistem. Validasi di frontend bisa dilewati, tetapi backend memiliki kendali penuh atas apa yang diterima dan diproses.
+
+3. Kepastian Pengolahan Data
+Validasi dan pembersihan di frontend bertujuan untuk meningkatkan pengalaman pengguna (user experience) dengan memberikan feedback cepat dan mengurangi beban pada server. Namun, frontend bisa mengalami masalah seperti:
+
+- Kegagalan JavaScript: Browser mungkin memblokir atau tidak menjalankan JavaScript dengan benar, sehingga validasi frontend gagal.
+- Tidak dapat diandalkan sepenuhnya: Berbagai macam perangkat atau browser bisa menafsirkan JavaScript secara berbeda. Untuk memastikan pengolahan data selalu akurat, backend harus melakukan pembersihan tambahan.
+Backend memastikan bahwa meskipun terjadi masalah di frontend, data yang diterima server selalu bersih dan valid.
+
+4. Kontrol atas Semua Data yang Masuk
+Backend bertanggung jawab untuk memproses semua request yang masuk ke server, baik itu berasal dari aplikasi web, aplikasi mobile, atau bahkan sistem lain yang berinteraksi dengan API. Dengan melakukan pembersihan di backend, server dapat mengontrol semua data yang masuk, terlepas dari bagaimana data tersebut sampai ke server.
+
+- Tidak semua request berasal dari frontend: Ada banyak skenario di mana data dikirim ke server tanpa melalui antarmuka pengguna (misalnya, integrasi API). Jika hanya melakukan pembersihan di frontend, input dari sumber lain bisa melewati validasi.
+- Sistem yang kompleks: Pada aplikasi yang lebih besar dan lebih kompleks, ada banyak cara data dapat diproses dan dikirim ke server. Hanya validasi di backend yang dapat memastikan semua jalur masuk data benar-benar aman dan sesuai aturan.
+
+5. Menjaga Konsistensi Antara Frontend dan Backend
+Frontend memang dapat memberikan pengalaman pengguna yang lebih baik dengan validasi cepat dan umpan balik instan. Namun, backend adalah tempat terakhir di mana data harus diperiksa sebelum diproses lebih lanjut. Jika backend tidak melakukan pembersihan dan validasi data:
+
+- Bisa terjadi ketidakcocokan data atau masalah saat data disimpan di database.
+- Aplikasi mungkin memproses data yang tidak valid, yang bisa menyebabkan masalah di kemudian hari (misalnya, kegagalan sistem atau kesalahan logika bisnis).
+- Dengan membersihkan data di backend, pengembang dapat memastikan bahwa semua aturan dan kebijakan mengenai input data dipatuhi di seluruh aplikasi.
+
+6. Menghindari Ketergantungan pada Frontend
+Bergantung sepenuhnya pada validasi frontend adalah langkah yang sangat rentan, karena frontend sepenuhnya berada di tangan pengguna. Mereka dapat memodifikasi atau mematikan JavaScript, mengirimkan request secara manual, atau bahkan melewati frontend sama sekali. Backend harus bertindak sebagai "penjaga terakhir" yang memastikan bahwa data apa pun yang dikirimkan ke server adalah aman dan valid.
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)!
+1. Mengganti bagian kode pada function `login_user` pada `views.py`
+```py
+# Kode yang ditambahkan pada function login_user
+if request.method == 'POST':
+      form = AuthenticationForm(data=request.POST)
+
+      if form.is_valid():
+        user = form.get_user()
+        login(request, user)
+        response = HttpResponseRedirect(reverse("main:show_main"))
+        response.set_cookie('last_login', str(datetime.datetime.now()))
+        return response
+      
+      else:
+        messages.error(request, "Invalid username or password. Please try again.")
+```
+
+2. Update import pada `views.py` dan membuat fungsi baru
+```py
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+```
+```py
+@csrf_exempt
+@require_POST
+def add_product_entry_ajax(request):
+    name = strip_tags(request.POST.get("name"))
+    price = request.POST.get("price")
+    description = strip_tags(request.POST.get("description"))
+    quantity = request.POST.get("quantity")
+    user = request.user
+
+    new_product = Product(
+        name=name, price=price,
+        description=description, quantity=quantity,
+        user=user
+    )
+    new_product.save()
+
+    return HttpResponse(b"CREATED", status=201)
+```
+
+3. Routing fungsi diatas di `urls.py`
+```py
+...
+path('create-product-entry-ajax', add_product_entry_ajax, name='add_product_entry_ajax')
+```
+
+4. Mengupdate `show_json` dan `show_xml`
+```py
+def show_xml(request):
+    data = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
+
+def show_json(request):
+    data = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+```
+
+5. Update `main.html` dengan menghapus beberapa code of line dan menggantinya dengan code of line baru
+```HTML
+<div id="product_entry_cards"></div>
+```
+
+6. Buat block `<script>` dan menambahkan beberapa function baru
+```HTML
+<script>
+  async function getProductEntries(){
+      return fetch("{% url 'main:show_json' %}").then((res) => res.json())
+  }
+
+  async function refreshProductEntries() {
+    document.getElementById("product_entry_cards").innerHTML = "";
+    document.getElementById("product_entry_cards").className = "";
+    const productEntries = await getProductEntries();
+    let htmlString = "";
+    let classNameString = "";
+
+    if (productEntries.length === 0) {
+        classNameString = "flex flex-col items-center justify-center min-h-[24rem] p-6";
+        htmlString = `
+          <div class="flex flex-col items-center justify-center min-h-[24rem] p-6">
+              <img src="{% static 'images/sad-homelander.jpg' %}" alt="Sad face" class="w-32 h-32 mb-4"/>
+              <p class="text-center text-gray-600 mt-4">No Data Found :(</p>
+          </div>
+        `;
+    }
+    else {
+        classNameString = "columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6 w-full"
+        productEntries.forEach((item) => {
+          const name = DOMPurify.sanitize(item.fields.name);
+          const description = DOMPurify.sanitize(item.fields.description);
+          htmlString += `
+          <div class="relative break-inside-avoid">
+              <div class="absolute top-2 z-10 left-1/2 -translate-x-1/2 flex items-center -space-x-2">
+                  <div class="w-[3rem] h-8 bg-gray-200 rounded-md opacity-80 -rotate-90"></div>
+                  <div class="w-[3rem] h-8 bg-gray-200 rounded-md opacity-80 -rotate-90"></div>
+              </div>
+              <div class="relative top-5 bg-indigo-100 shadow-md rounded-lg mb-6 break-inside-avoid flex flex-col border-2 border-indigo-300 transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                  <div class="bg-indigo-200 text-gray-800 p-4 rounded-t-lg border-b-2 border-indigo-300">
+                      <h3 class="font-bold text-xl mb-2">${name}</h3>
+                      <p class="text-gray-600">${item.fields.price}</p>
+                  </div>
+                  <div class="p-4">
+                      <p class="font-semibold text-lg mb-2">Description</p>
+                      <p class="text-gray-700 mb-2">
+                          <span class="bg-[linear-gradient(to_bottom,transparent_0%,transparent_calc(100%_-_1px),#CDC1FF_calc(100%_-_1px))] bg-[length:100%_1.5rem] pb-1">${description}</span>
+                      </p>
+                      <div class="mt-4">
+                          <p class="text-gray-700 font-semibold mb-2">Quantity</p>
+                          <div class="relative pt-1">
+                              <div class="flex mb-2 items-center justify-between">
+                                  <div>
+                                      <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-indigo-600 bg-indigo-200">
+                                          ${item.fields.quantity > 10 ? '10+' : item.fields.quantity}
+                                      </span>
+                                  </div>
+                              </div>
+                              <div class="overflow-hidden h-2 mb-4 text-xs flex rounded-full bg-indigo-200">
+                                  <div style="width: ${item.fields.quantity > 10 ? 100 : item.fields.quantity * 10}%;" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="mt-4 flex space-x-3">
+                  <a href="/edit-product/${item.pk}" class="bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg px-4 py-2 transition duration-300 flex items-center space-x-2 shadow-lg">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                          <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                      </svg>
+                  </a>
+                  <a href="/delete-product/${item.pk}" class="bg-red-500 hover:bg-red-600 text-white rounded-lg px-4 py-2 transition duration-300 flex items-center space-x-2 shadow-lg">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-9 w-9" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+                      </svg>
+                  </a>
+              </div>
+          </div>
+          `;
+        });
+    }
+    document.getElementById("product_entry_cards").className = classNameString;
+    document.getElementById("product_entry_cards").innerHTML = htmlString;
+  }
+  refreshProductEntries();
+
+  const modal = document.getElementById('crudModal');
+  const modalContent = document.getElementById('crudModalContent');
+
+  function showModal() {
+      const modal = document.getElementById('crudModal');
+      const modalContent = document.getElementById('crudModalContent');
+
+      modal.classList.remove('hidden'); 
+      setTimeout(() => {
+        modalContent.classList.remove('opacity-0', 'scale-95');
+        modalContent.classList.add('opacity-100', 'scale-100');
+      }, 50); 
+  }
+
+  function hideModal() {
+      const modal = document.getElementById('crudModal');
+      const modalContent = document.getElementById('crudModalContent');
+
+      modalContent.classList.remove('opacity-100', 'scale-100');
+      modalContent.classList.add('opacity-0', 'scale-95');
+
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 150); 
+  }
+
+  document.getElementById("cancelButton").addEventListener("click", hideModal);
+  document.getElementById("closeModalBtn").addEventListener("click", hideModal);
+
+  function addProductEntry() {
+    fetch("{% url 'main:add_product_entry_ajax' %}", {
+      method: "POST",
+      body: new FormData(document.querySelector('#productForm')),
+    })
+    .then(response => refreshProductEntries())
+
+    document.getElementById("productForm").reset(); 
+    document.querySelector("[data-modal-toggle='crudModal']").click();
+
+    return false;
+  }
+
+  document.getElementById("productForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    addProductEntry();
+  })
+</script>
+```
+
+7. Membuat modal untuk form untuk menambahkan Product
+```HTML
+<div id="crudModal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 w-full flex items-center justify-center bg-gray-800 bg-opacity-50 overflow-x-hidden overflow-y-auto transition-opacity duration-300 ease-out">
+    <div id="crudModalContent" class="relative bg-white rounded-lg shadow-lg w-5/6 sm:w-3/4 md:w-1/2 lg:w-1/3 mx-4 sm:mx-0 transform scale-95 opacity-0 transition-transform transition-opacity duration-300 ease-out">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between p-4 border-b rounded-t">
+        <h3 class="text-xl font-semibold text-gray-900">
+          Add New Product Entry
+        </h3>
+        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" id="closeModalBtn">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div class="px-6 py-4 space-y-6 form-style">
+        <form id="productForm">
+          <div class="mb-4">
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md p-2 hover:border-indigo-700" placeholder="Enter your Product name" required>
+          </div>
+          <div class="mb-4">
+            <label for="price" class="block text-sm font-medium text-gray-700">Price</label>
+            <input type="text" id="price" name="price" class="mt-1 block w-full border border-gray-300 rounded-md p-2 hover:border-indigo-700" placeholder="Enter your Product price" required>
+          </div>
+          <div class="mb-4">
+            <label for="description" class="block text-sm font-medium text-gray-700">Product Description</label>
+            <textarea id="description" name="description" rows="3" class="mt-1 block w-full h-52 resize-none border border-gray-300 rounded-md p-2 hover:border-indigo-700" placeholder="Describe your Product" required></textarea>
+          </div>
+          <div class="mb-4">
+            <label for="quantity" class="block text-sm font-medium text-gray-700">Product Quantity</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="10" class="mt-1 block w-full border border-gray-300 rounded-md p-2 hover:border-indigo-700" required>
+          </div>
+        </form>
+      </div>
+      <!-- Modal footer -->
+      <div class="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-2 p-6 border-t border-gray-200 rounded-b justify-center md:justify-end">
+        <button type="button" class="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-lg" id="cancelButton">Cancel</button>
+        <button type="submit" id="submitProductEntry" form="productForm" class="bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg">Save</button>
+      </div>
+    </div>
+  </div>
+  ...
+</div>
+```
+
+8. Menambahkan `strip_tags` untuk membersihkan data baru pada `views.py` dan `forms.py`
+```py
+def add_product_entry_ajax(request):
+    name = strip_tags(request.POST.get("name"))
+    price = request.POST.get("price")
+    description = strip_tags(request.POST.get("description"))
+    quantity = request.POST.get("quantity")
+    user = request.user
+
+    new_product = Product(
+        name=name, price=price,
+        description=description, quantity=quantity,
+        user=user
+    )
+    new_product.save()
+
+    return HttpResponse(b"CREATED", status=201)
+```
+```py
+class ProductForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ["name", "price", "description", "quantity"]
+
+    def clean_name(self):
+        name = self.cleaned_data["name"]
+        return strip_tags(name)
+    
+    def clean_description(self):
+        description = self.cleaned_data["description"]
+        return strip_tags(description)
+```
+
+9. Membersihkan data dengan `DOMPurify` dengan menambahkan potongan kode pada meta yang ada di `main.html` dan pada fungsi `refreshProductEntries`
+```HTML
+{% block meta %}
+<title>Amajon</title>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.7/dist/purify.min.js"></script>
+{% endblock meta %}
+```
+```HTML
+<script>
+...
+const name = DOMPurify.sanitize(item.fields.name);
+const description = DOMPurify.sanitize(item.fields.description);
+...
+</script>
+```
